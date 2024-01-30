@@ -27,7 +27,7 @@ changeColorBtn.addEventListener(“click”, function() {
 
 const newColor = getRandomColor();
 
-box.style.backgroundColor = newColor;
+box.style.backgroundColor = transparent;
 });
 
 });
