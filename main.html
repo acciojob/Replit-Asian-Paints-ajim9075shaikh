@@ -8,36 +8,21 @@
 
 <body>
 	<!-- the entire body must be written by student -->
-    <input type="text" placeholder="Enter block id" id="block_id">
-
-   <input type="text" placeholder="Enter colour id" id="colour_id">
-
-  <button id="change_button">Change</button>
-
-   <button id="reset_button">Reset</button>
-
-    <div class="grid-container">
-
-    <div class="grid-item" id="1">1</div>
-
-    <div class="grid-item" id="2">2</div>
-
-    <div class="grid-item" id="3">3</div>
-
-    <div class="grid-item" id="4">4</div>
-
-    <div class="grid-item" id="5">6</div>
-
-    <div class="grid-item" id="7">7</div>
-    <div class="grid-item" id="8">8</div>
-
-    <div class="grid-item" id="9">9</div>
-
-</div>
-	
-	
-	
-	
+    
+    <div class="grid"></div>
+	 <form id="form">
+      <input
+        type="number"
+        min="1"
+        max="9"
+        name="inputId"
+        id="input-id"
+        required
+        placeholder="Enter cell id"
+      />
+      <input type="color" name="color" id="color-id" required />
+      <button>Add Color</button>
+    </form> 	
 	<script type="text/javascript" src="./script.js">
 </script>
 

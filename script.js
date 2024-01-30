@@ -1,55 +1,34 @@
-const reset = document.getElementById(“reset_button”);
 
-const change = document.getElementById(“change_button”);
 
-reset.addEventListener(“click”, resetGrid);
 
-change.addEventListener(“click”, changeColor);
 
-function resetGrid() {
+const gridContainer = document.querySelector(".grid");
+ const form = document.querySelector("#form");
+ let previousSelectedElement = null;
 
-for (let i = 1; i <= 9; i++) {
+ form.addEventListener("submit", function (event) {
+     event.preventDefault();
+      inputId, color
 
-const gridItem = document.getElementById(`${i}`);
+     let cellId = form.inputId.value; // "3"
+     let selectedColor = form.color.value; // "#fjf88"
 
-gridItem.style.backgroundColor = "transparent";
-// console.log(gridItem);
+      inputId = "3"
+      selectedColor = "#e7e7e7" ;
+     let cell = document.getElementById(cellId);
+     cell.style.backgroundColor = selectedColor;
+     if (previousSelectedElement) {
+         previousSelectedElement.style.backgroundColor = "white";
+     }
 
-}
+     previousSelectedElement = cell;
+ });
 
-}
+ for (let i = 1; i <= 9; i++) {
+     const gridItem = document.createElement("div");
+     gridItem.id = i;
+     gridItem.innerText = i;
+     gridItem.className = "grid-item"
+     gridContainer.appendChild(gridItem);
+ }
 
-function changeColor() {
-
-const blockId = document.getElementById(“block_id”);
-
-const colorId = document.getElementById(“colour_id”);
-
-if (!blockId.value) {
-
-alert("Please enter block id");
-}
-
-if (!colorId.value) {
-
-alert("Please enter colour id");
-}
-
-if (blockId.value>=9) {
-
-alert("Invalid block Id");
-}
-
-resetGrid();
-
-console.log(blockId.value)
-
-const gridItem = document.getElementById(${blockId.value});
-
-gridItem.style.backgroundColor = colorId.value;
-
-blockId.value = “”;
-
-colorId.value = “”;
-
-}
