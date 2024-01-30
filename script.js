@@ -1,33 +1,55 @@
-document.addEventListener(“DOMContentLoaded”, function() {
+const reset = document.getElementById(“reset_button”);
 
-const box = document.getElementById(“box”);
+const change = document.getElementById(“change_button”);
 
-const changeColorBtn = document.getElementById(“changeColorBtn”);
+reset.addEventListener(“click”, resetGrid);
 
-// Function to generate a random color
+change.addEventListener(“click”, changeColor);
 
-function getRandomColor() {
+function resetGrid() {
 
-const letters = "0123456789ABCDEF";
+for (let i = 1; i <= 9; i++) {
 
-let color = "#";
+const gridItem = document.getElementById(`${i}`);
 
-for (let i = 0; i < 6; i++) {
-
-  color += letters[Math.floor(Math.random() * 16)];
+gridItem.style.backgroundColor = "transparent";
+// console.log(gridItem);
 
 }
 
-return color;
 }
 
-// Event listener for the “Change Color” button
+function changeColor() {
 
-changeColorBtn.addEventListener(“click”, function() {
+const blockId = document.getElementById(“block_id”);
 
-const newColor = getRandomColor();
+const colorId = document.getElementById(“colour_id”);
 
-box.style.backgroundColor = transparent;
-});
+if (!blockId.value) {
 
-});
+alert("Please enter block id");
+}
+
+if (!colorId.value) {
+
+alert("Please enter colour id");
+}
+
+if (blockId.value>=9) {
+
+alert("Invalid block Id");
+}
+
+resetGrid();
+
+console.log(blockId.value)
+
+const gridItem = document.getElementById(${blockId.value});
+
+gridItem.style.backgroundColor = colorId.value;
+
+blockId.value = “”;
+
+colorId.value = “”;
+
+}
